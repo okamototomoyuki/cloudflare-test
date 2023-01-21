@@ -35,7 +35,7 @@ export const load = (async ({ platform }) => {
             // obj["___3"] = platform?.env?.__D1_BETA__test1234("sdfsda");
             // obj["___2"] = data;
             obj["___"] = platform?.env?.__D1_BETA__test1234.fetch.toString();
-            obj["____"] = res?.toString();
+            obj["____"] = await res.json();
             // for (let [k, v] of Object.getOwnPropertyNames(platform?.env.__D1_BETA__test1234)) {
             //     obj[k] = v.toString();
             // }
