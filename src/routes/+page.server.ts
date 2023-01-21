@@ -6,7 +6,8 @@ export const load = (async ({ platform }) => {
             // const ps = platform?.env?.__D2_BETA__test1234.prepare('SELECT * from test_table');
             // const data = await ps.first();
             const obj: { [key: string]: string } = {};
-            // obj["___"] = platform?.env?.__D1_BETA__test1234.constructor?.toString();
+            obj["___"] = platform?.env?.__D1_BETA__test1234.constructor?.toString();
+            obj["___2"] = platform?.env?.__D1_BETA__test1234.toString();
             // obj["___2"] = data;
             for (let [k, v] of Object.getOwnPropertyNames(platform?.env?.__D1_BETA__test1234)) {
                 obj[k] = v.toString();
