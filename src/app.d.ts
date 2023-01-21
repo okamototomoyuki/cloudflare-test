@@ -6,6 +6,7 @@ declare global {
 			env: {
 				test_kv: KVNamespace;
 				__D1_BETA__test1234: D1Database;
+				test1234: D1Database;
 			};
 			context: {
 				waitUntil(promise: Promise<any>): void;
