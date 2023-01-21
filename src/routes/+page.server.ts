@@ -16,6 +16,7 @@ export const load = (async ({ platform }) => {
             }
             const obj: { [key: string]: string } = {};
             const ps = platform?.env?.test1234.prepare('SELECT * from test_table');
+            obj["ps"] = ps.toString();
             obj["test_kv"] = ps;
             const data = await ps.first();
             // obj["___"] = platform?.env?.__D1_BETA__test1234.constructor?.toString();
