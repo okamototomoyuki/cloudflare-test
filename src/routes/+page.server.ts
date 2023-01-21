@@ -3,8 +3,8 @@ export const load = (async ({ platform }) => {
     if (platform) {
         // const test_value = platform.env.test_kv.idFromName('test_key');
         try {
-            const ps = platform?.env?.test1234.prepare('SELECT * from test_table');
-            const data = await ps.first();
+            // const ps = platform?.env?.test1234.prepare('SELECT * from test_table');
+            // const data = await ps.first();
             const obj: { [key: string]: string } = {};
             // for (let [k, v] of Object.entries(platform?.env)) {
             //     obj[k] = v.toString();
