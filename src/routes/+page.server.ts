@@ -8,7 +8,7 @@ export const load = (async ({ platform }) => {
         for (let [k, v] of Object.entries(platform?.env)) {
             obj[k] = v.toString();
         }
-        return platform?.env;
+        return obj;
         // return { "data": platform.toString(), "data2": platform?.env?.toString(), "data3": platform?.env?.test_kv?.toString() };
         // return {}
     }
