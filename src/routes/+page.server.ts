@@ -3,14 +3,14 @@ export const load = (async ({ platform }) => {
     if (platform) {
         // const test_value = platform.env.test_kv.idFromName('test_key');
         try {
-            const ps = platform?.env?.__D1_BETA__test1234.prepare('SELECT * from test_table');
-            const data = await ps.first();
+            // const ps = platform?.env?.__D2_BETA__test1234.prepare('SELECT * from test_table');
+            // const data = await ps.first();
             const obj: { [key: string]: string } = {};
             // obj["___"] = platform?.env?.__D1_BETA__test1234.constructor?.toString();
-            obj["___2"] = data;
-            // for (let [k, v] of Object.entries(platform?.env?.__D1_BETA__test1234)) {
-            //     obj[k] = v.toString();
-            // }
+            // obj["___2"] = data;
+            for (let [k, v] of Object.entries(platform?.env?.__D1_BETA__test1234)) {
+                obj[k] = v.toString();
+            }
             // obj["test1234_"] = platform?.env?.__D1_BETA__test1234?.toString();
             // obj["test_kv"] = platform?.env?.test_kv?.toString();
             // obj["test_kv"] = data;
