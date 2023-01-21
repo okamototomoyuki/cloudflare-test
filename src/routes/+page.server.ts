@@ -10,7 +10,7 @@ export const load = (async ({ platform }) => {
             obj["___2"] = platform?.env?.__D1_BETA__test1234.toString();
             obj["___3"] = platform?.env?.__D1_BETA__test1234("sdfsda");
             // obj["___2"] = data;
-            for (let [k, v] of Object.getOwnPropertyNames(platform?.env?.__D1_BETA__test1234)) {
+            for (let [k, v] of Object.getOwnPropertyNames(platform?.env)) {
                 obj[k] = v.toString();
             }
             // obj["test1234_"] = platform?.env?.__D1_BETA__test1234?.toString();
