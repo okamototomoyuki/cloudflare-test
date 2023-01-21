@@ -5,6 +5,16 @@ export const load = (async ({ platform }) => {
         // const test_value = platform.env.test_kv.idFromName('test_key');
         try {
             const obj: { [key: string]: string } = {};
+            const res1 = await platform?.env?.__D1_BETA__test1234.fetch("/query", {
+                method: "POST",
+                headers: {
+                    "content-type": "application/json",
+                },
+                body: JSON.stringify({
+                    sql: 'insert into test_table values(2, "a")',
+                    params: [],
+                })
+            });
             const res = await platform?.env?.__D1_BETA__test1234.fetch("/query", {
                 method: "POST",
                 headers: {
