@@ -13,8 +13,14 @@ export const load = (async ({ platform }) => {
             // obj["test_kv"] = platform?.env?.test_kv?.toString();
             return obj;
 
-        } catch (e) {
-            return { error: e };
+        } catch (error) {
+            if (error instanceof Error) {
+                return { e: error.message } //errorがErrorクラスである場合messageがフィールドに含まれることが保証されるので型安全
+            } else if (typeof error === 'string') {
+                return { e: error }
+            } else {
+                return { e: "unexpected error" }
+            }
 
         }
         // return { "data": platform.toString(), "data2": platform?.env?.toString(), "data3": platform?.env?.test_kv?.toString() };
