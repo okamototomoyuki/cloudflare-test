@@ -11,8 +11,8 @@ export const load = (async ({ platform }) => {
                     "content-type": "application/json",
                 },
                 body: JSON.stringify({
-                    sql: 'SELECT * from test_table',
-                    params: {},
+                    sql: 'select * from test_table',
+                    params: [],
                 })
             });
 
