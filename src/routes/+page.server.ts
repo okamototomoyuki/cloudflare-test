@@ -5,7 +5,7 @@ export const load = (async ({ platform }) => {
         // const test_value = platform.env.test_kv.idFromName('test_key');
         try {
             const obj: { [key: string]: string } = {};
-            const res = await platform?.env?.__D1_BETA__test1234.fetch("/query", {
+            const res = await platform?.env?.__D1_BETA__test1234("/query", {
                 method: "POST",
                 headers: {
                     "content-type": "application/json",
