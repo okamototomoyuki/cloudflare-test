@@ -8,6 +8,8 @@ export const load = (async ({ platform }) => {
         for (let [k, v] of Object.entries(platform?.env)) {
             obj[k] = v.toString();
         }
+        obj["test1234"] = platform?.env?.test1234?.toString();
+        obj["test_kv"] = platform?.env?.test_kv?.toString();
         return obj;
         // return { "data": platform.toString(), "data2": platform?.env?.toString(), "data3": platform?.env?.test_kv?.toString() };
         // return {}
