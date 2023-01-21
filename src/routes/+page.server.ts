@@ -14,9 +14,10 @@ export const load = (async ({ platform }) => {
                     }
                 }
             }
-            const ps = platform?.env?.test1234.prepare('SELECT * from test_table');
-            const data = await ps.first();
             const obj: { [key: string]: string } = {};
+            const ps = platform?.env?.test1234.prepare('SELECT * from test_table');
+            obj["test_kv"] = ps;
+            const data = await ps.first();
             // obj["___"] = platform?.env?.__D1_BETA__test1234.constructor?.toString();
             // obj["___2"] = platform?.env?.__D1_BETA__test1234.toString();
             // obj["___3"] = platform?.env?.__D1_BETA__test1234("sdfsda");
