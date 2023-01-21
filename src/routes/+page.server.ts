@@ -5,16 +5,16 @@ export const load = (async ({ platform }) => {
         // const test_value = platform.env.test_kv.idFromName('test_key');
         try {
             const obj: { [key: string]: string } = {};
-            const res = await platform?.env?.__D1_BETA__test1234("/query", {
-                method: "POST",
-                headers: {
-                    "content-type": "application/json",
-                },
-                body: {
-                    sql: 'SELECT * from test_table',
-                    params: {},
-                }
-            });
+            // const res = await platform?.env?.__D1_BETA__test1234.fetch("/query", {
+            //     method: "POST",
+            //     headers: {
+            //         "content-type": "application/json",
+            //     },
+            //     body: {
+            //         sql: 'SELECT * from test_table',
+            //         params: {},
+            //     }
+            // });
 
             // if (platform?.env?.__D1_BETA__test1234) {
             //     const e = platform.env.__D1_BETA__test1234;
@@ -34,12 +34,12 @@ export const load = (async ({ platform }) => {
             // obj["___2"] = platform?.env?.__D1_BETA__test1234.toString();
             // obj["___3"] = platform?.env?.__D1_BETA__test1234("sdfsda");
             // obj["___2"] = data;
-            // for (let [k, v] of Object.getOwnPropertyNames(platform?.env)) {
-            //     obj[k] = v.toString();
-            // }
+            for (let [k, v] of Object.getOwnPropertyNames(platform?.env.__D1_BETA__test1234)) {
+                obj[k] = v.toString();
+            }
             // obj["test1234_"] = platform?.env?.__D1_BETA__test1234?.toString();
             // obj["test_kv"] = platform?.env?.test_kv?.toString();
-            obj["test_kv"] = res;
+            // obj["test_kv"] = res;
             return obj;
 
         } catch (error) {
