@@ -5,7 +5,7 @@ export const load = (async ({ platform }) => {
         // const ps = platform.env.NORTHWIND_DB.prepare('SELECT * from users');
         // const data = await ps.first();
         const obj: { [key: string]: string } = {};
-        for (let [k, v] of Object.entries(platform?.env){
+        for (let [k, v] of Object.entries(platform?.env)) {
             obj[k] = v.toString();
         }
         return platform?.env;
