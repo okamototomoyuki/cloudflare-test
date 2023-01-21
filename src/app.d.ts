@@ -2,6 +2,16 @@
 // for information about these interfaces
 declare global {
 	namespace App {
+		interface Platform {
+			env: {
+				test_kv: DurableObjectNamespace;
+				NORTHWIND_DB: D1Database;
+			};
+			context: {
+				waitUntil(promise: Promise<any>): void;
+			};
+			caches: CacheStorage & { default: Cache }
+		}
 		// interface Error {}
 		// interface Locals {}
 		// interface PageData {}
@@ -9,4 +19,4 @@ declare global {
 	}
 }
 
-export {};
+export { };

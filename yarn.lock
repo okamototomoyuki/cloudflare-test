@@ -5,6 +5,13 @@ __metadata:
   version: 6
   cacheKey: 8
 
+"@cloudflare/workers-types@npm:^4.20221111.1":
+  version: 4.20221111.1
+  resolution: "@cloudflare/workers-types@npm:4.20221111.1"
+  checksum: 6ee1ba28ee3c59926f0f49da7023a887846bb637d43da0d8787ed87b2ed624bd83471feba9519a404a58cecad73f3a74a67bc3f52ccfda916947d297cfaa988c
+  languageName: node
+  linkType: hard
+
 "@esbuild/android-arm64@npm:0.16.17":
   version: 0.16.17
   resolution: "@esbuild/android-arm64@npm:0.16.17"
@@ -252,6 +259,19 @@ __metadata:
   peerDependencies:
     "@sveltejs/kit": ^1.0.0
   checksum: 46426b81164b2d60e0eb2880ca5caa4b8c5b0d0b6a1f2a8b6c2f4d5c9db326d775facfbd834e50b697629ca3e3a35138e021cf9d1cbf8215ab2820e5ed8ff001
+  languageName: node
+  linkType: hard
+
+"@sveltejs/adapter-cloudflare@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "@sveltejs/adapter-cloudflare@npm:1.1.0"
+  dependencies:
+    "@cloudflare/workers-types": ^4.20221111.1
+    esbuild: ^0.16.3
+    worktop: 0.8.0-next.14
+  peerDependencies:
+    "@sveltejs/kit": ^1.0.0
+  checksum: fde4018ed4a8c489c4179beac54490205d212b35823d04b62d87224cc172c967c8fbb33639e7874f07d63c324a9735edf3e7a3273a301d0e2ffea44f3694bf27
   languageName: node
   linkType: hard
 
@@ -535,6 +555,7 @@ __metadata:
   resolution: "cloudflare-test@workspace:."
   dependencies:
     "@sveltejs/adapter-auto": ^1.0.0
+    "@sveltejs/adapter-cloudflare": ^1.1.0
     "@sveltejs/kit": ^1.0.0
     svelte: ^3.54.0
     svelte-check: ^3.0.1
@@ -1491,6 +1512,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"regexparam@npm:^2.0.0":
+  version: 2.0.1
+  resolution: "regexparam@npm:2.0.1"
+  checksum: 797998e96c995c200ebd4a7d5e734381b96d3979b4b6672ec65ed5ca9210b8a5149ad73109ec32115779674b526088704c2564e9fa07f8b747743beadc424803
+  languageName: node
+  linkType: hard
+
 "resolve-from@npm:^4.0.0":
   version: 4.0.0
   resolution: "resolve-from@npm:4.0.0"
@@ -2022,6 +2050,16 @@ __metadata:
   dependencies:
     string-width: ^1.0.2 || 2 || 3 || 4
   checksum: d5fc37cd561f9daee3c80e03b92ed3e84d80dde3365a8767263d03dacfc8fa06b065ffe1df00d8c2a09f731482fcacae745abfbb478d4af36d0a891fad4834d3
+  languageName: node
+  linkType: hard
+
+"worktop@npm:0.8.0-next.14":
+  version: 0.8.0-next.14
+  resolution: "worktop@npm:0.8.0-next.14"
+  dependencies:
+    mrmime: ^1.0.0
+    regexparam: ^2.0.0
+  checksum: a52ce8df2d4c32602b685813a53c833243fb18a6bf5bf750d4b28dcba5848181b6a08ecb21a165e886d3e36aea7073b701f6f73cabd513372cec1b95ced3bd9f
   languageName: node
   linkType: hard
 
