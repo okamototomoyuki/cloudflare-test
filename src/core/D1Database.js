@@ -183,3 +183,15 @@ export class D1PreparedStatement {
         return raw;
     }
 };
+function firstIfArray(results) {
+    return Array.isArray(results) ? results[0] : results;
+}
+function mapD1Result(result) {
+    let map = {
+        results: result.results || [],
+        success: result.success === void 0 ? true : result.success,
+        meta: result.meta || {},
+    };
+    result.error && (map.error = result.error);
+    return map;
+}
