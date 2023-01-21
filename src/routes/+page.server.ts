@@ -5,16 +5,16 @@ export const load = (async ({ platform }) => {
         // const test_value = platform.env.test_kv.idFromName('test_key');
         try {
             const obj: { [key: string]: string } = {};
-            // const res = await platform?.env?.__D1_BETA__test1234.fetch("/query", {
-            //     method: "POST",
-            //     headers: {
-            //         "content-type": "application/json",
-            //     },
-            //     body: {
-            //         sql: 'SELECT * from test_table',
-            //         params: {},
-            //     }
-            // });
+            const res = await platform?.env?.__D1_BETA__test1234.fetch("/query", {
+                method: "POST",
+                headers: {
+                    "content-type": "application/json",
+                },
+                body: JSON.stringify({
+                    sql: 'SELECT * from test_table',
+                    params: {},
+                })
+            });
 
             // if (platform?.env?.__D1_BETA__test1234) {
             //     const e = platform.env.__D1_BETA__test1234;
