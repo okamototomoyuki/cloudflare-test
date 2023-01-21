@@ -4,8 +4,8 @@ declare global {
 	namespace App {
 		interface Platform {
 			env: {
-				test_kv: DurableObjectNamespace;
-				NORTHWIND_DB: D1Database;
+				test_kv: KVNamespace;
+				test1234: D1Database;
 			};
 			context: {
 				waitUntil(promise: Promise<any>): void;
