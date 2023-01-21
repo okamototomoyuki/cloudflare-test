@@ -4,21 +4,32 @@ export const load = (async ({ platform }) => {
     if (platform) {
         // const test_value = platform.env.test_kv.idFromName('test_key');
         try {
-            if (platform?.env?.__D1_BETA__test1234) {
-                const e = platform.env.__D1_BETA__test1234;
-                if (e) {
-                    if (e.prepare) {
-                        platform.env.test1234 = e;
-                    } else {
-                        platform.env.test1234 = new D1Database(e);
-                    }
-                }
-            }
             const obj: { [key: string]: string } = {};
-            const ps = platform?.env?.test1234.prepare('SELECT * from test_table');
-            obj["ps"] = ps.toString();
-            obj["test_kv"] = ps;
-            const data = await ps.first();
+            const res = await platform?.env?.__D1_BETA__test1234.fetch("/query", {
+                method: "POST",
+                headers: {
+                    "content-type": "application/json",
+                },
+                body: {
+                    sql: 'SELECT * from test_table',
+                    params: {},
+                }
+            });
+
+            // if (platform?.env?.__D1_BETA__test1234) {
+            //     const e = platform.env.__D1_BETA__test1234;
+            //     if (e) {
+            //         if (e.prepare) {
+            //             platform.env.test1234 = e;
+            //         } else {
+            //             platform.env.test1234 = new D1Database(e);
+            //         }
+            //     }
+            // }
+            // const ps = platform?.env?.test1234.prepare('SELECT * from test_table');
+            // obj["ps"] = ps.toString();
+            // obj["test_kv"] = ps;
+            // const data = await ps.first();
             // obj["___"] = platform?.env?.__D1_BETA__test1234.constructor?.toString();
             // obj["___2"] = platform?.env?.__D1_BETA__test1234.toString();
             // obj["___3"] = platform?.env?.__D1_BETA__test1234("sdfsda");
@@ -28,7 +39,7 @@ export const load = (async ({ platform }) => {
             // }
             // obj["test1234_"] = platform?.env?.__D1_BETA__test1234?.toString();
             // obj["test_kv"] = platform?.env?.test_kv?.toString();
-            obj["test_kv"] = data;
+            obj["test_kv"] = res;
             return obj;
 
         } catch (error) {
